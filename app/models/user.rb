@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  validates :username, presence: true
+  validates :username, uniqueness: true
+  
   include Devise::JWT::RevocationStrategies::JTIMatcher
 
   devise :database_authenticatable,
