@@ -6,7 +6,7 @@ class Users::SessionsController < Devise::SessionsController
   def respond_with(resource, _opts = {})
     if resource.persisted?
       render json: {
-        message: 'Logged in successfully.'},
+        message: 'Logged in successfully.',
         data: UserSerializer.new(resource).serializable_hash[:data][:attributes]
       }
     else
