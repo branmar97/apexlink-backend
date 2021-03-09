@@ -1,24 +1,23 @@
-# README
+# Apex Link Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Apex Link is a web application where gamers can find friends and teammates for their Apex Legends squad.
 
-Things you may want to cover:
+## Usage
 
-* Ruby version
+Signup or login to create, view and join sessions.
 
-* System dependencies
+## Built Using
 
-* Configuration
+* Ruby on Rails
+* React
+* Redux
+* PostgreSQL
+* HTML/CSS
 
-* Database creation
+## Contributing
 
-* Database initialization
+Bug reports and pull requests are welcome on Github at https://github.com/branmar97/apexlink-backend
 
-* How to run the test suite
+## License
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Available as open source under the terms of the MIT license.
