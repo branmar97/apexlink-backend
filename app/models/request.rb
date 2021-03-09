@@ -1,4 +1,4 @@
 class Request < ApplicationRecord
-  belongs_to :session
+  belongs_to :lobby
   belongs_to :user
 end
