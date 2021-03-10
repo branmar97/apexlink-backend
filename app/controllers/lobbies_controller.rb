@@ -4,6 +4,7 @@ class LobbiesController < ApplicationController
     def index
         @lobbies = Lobby.all
         render json: @lobbies
+    end
 
     def show
          render json: @lobby
