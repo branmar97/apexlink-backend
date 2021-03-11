@@ -11,7 +11,9 @@ class LobbiesController < ApplicationController
     end 
 
     def create 
-        lobby = Lobby.create(lobby_params)
+        lobby = Lobby.new(lobby_params)
+        lobby.user_id = 1
+        lobby.save
         render json: lobby, status: 200
     end 
 
