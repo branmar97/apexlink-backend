@@ -7,4 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Lobby.create(region: "United States", platform: "Xbox", gamemode: "Ranked", description: "Looking for experienced players.", mic_required: true, user_id: 1)
 Lobby.create(region: "United States", platform: "Xbox", gamemode: "Duos", description: "Just trying to have some fun", mic_required: true, user_id: 1)
-
+Lobby.create(region: "United States", platform: "Playstation", gamemode: "Duos", description: "Dont care if youre bad", mic_required: false, user_id: 1)
