@@ -24,6 +24,6 @@ class RequestsController < ApplicationController
     end 
 
     def request_params
-        params.require(:request).permit(:lobby_id, user_id)
+        params.require(:request).permit(:gamertag, :description, :lobby_id, :user_id)
     end 
 end
