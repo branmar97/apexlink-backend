@@ -1,4 +1,4 @@
 class LobbySerializer
   include FastJsonapi::ObjectSerializer
-  attributes :id, :gamertag, :region, :platform, :gamemode, :description, :mic_required, :skill_level
+  attributes :id, :gamertag, :region, :platform, :gamemode, :description, :mic_required, :skill_level, :created_at
 end
