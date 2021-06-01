@@ -11,5 +11,4 @@ class Lobby < ApplicationRecord
   validates :description, length: { minimum: 50 }
   validates :mic_required, presence: true
   validates :skill_level, presence: true
-  validates :gamertag, presence: true
 end
