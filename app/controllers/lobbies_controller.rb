@@ -28,6 +28,6 @@ class LobbiesController < ApplicationController
     end 
 
     def lobby_params
-        params.require(:lobby).permit(:gamertag, :region, :platform, :gamemode, :description, :mic_required, :skill_level)
+        params.require(:lobby).permit(:gamertag, :region, :platform, :gamemode, :description, :mic_required, :skill_level, :user_id)
     end 
 end
