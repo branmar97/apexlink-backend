@@ -3,7 +3,7 @@ class LobbiesController < ApplicationController
     
     def index
         @lobbies = Lobby.all
-        render json: @lobbies
+        render json: LobbySerializer.new(@lobbies).serializable_hash[:data].map{|hash| hash[:attributes] }
     end
 
     def show
@@ -12,7 +12,6 @@ class LobbiesController < ApplicationController
 
     def create 
         lobby = Lobby.new(lobby_params)
-        lobby.user_id = 1
         lobby.save
         render json: lobby, status: 200
     end 
