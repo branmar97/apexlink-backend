@@ -7,7 +7,7 @@ class LobbiesController < ApplicationController
     end
 
     def show
-        @lobby_data = {data: @lobby, user: @lobby.user}
+        @lobby_data = {data: @lobby, user: @lobby.user, requests: @lobby.requests}
          render json: @lobby_data
     end 
 
