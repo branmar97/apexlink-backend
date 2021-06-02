@@ -8,13 +8,13 @@ class LobbiesController < ApplicationController
 
     def show
         @lobby_data = {data: @lobby, user: @lobby.user, requests: @lobby.requests}
-         render json: @lobby_data
+         render json: LobbySerializer.new(@lobby).serializable_hash[:data][:attributes]
     end 
 
     def create 
         lobby = Lobby.new(lobby_params)
         lobby.save
-        render json: lobby, status: 200
+        render json: LobbySerializer.new(lobby).serializable_hash[:data][:attributes]
     end 
 
     def destroy
@@ -28,6 +28,6 @@ class LobbiesController < ApplicationController
     end 
 
     def lobby_params
-        params.require(:lobby).permit(:gamertag, :region, :platform, :gamemode, :description, :mic_required, :skill_level, :user_id)
+        params.require(:lobby).permit(:region, :platform, :gamemode, :description, :mic_required, :skill_level, :user_id)
     end 
 end
