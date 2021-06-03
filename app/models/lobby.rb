@@ -11,4 +11,8 @@ class Lobby < ApplicationRecord
   validates :description, length: { minimum: 50 }
   validates :mic_required, presence: true
   validates :skill_level, presence: true
+
+  def short_desc 
+    self.description.truncate(30)
+  end
 end
