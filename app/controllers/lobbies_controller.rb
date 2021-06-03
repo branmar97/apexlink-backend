@@ -7,7 +7,6 @@ class LobbiesController < ApplicationController
     end
 
     def show
-        @lobby_data = {data: @lobby, user: @lobby.user, requests: @lobby.requests}
          render json: LobbySerializer.new(@lobby).serializable_hash[:data][:attributes]
     end 
 
