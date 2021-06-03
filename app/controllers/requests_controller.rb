@@ -3,13 +3,16 @@ class RequestsController < ApplicationController
     
     def index
         @requests = Request.all
-        render json: @requests
+        render json: RequestSerializer.new(@requests).serializable_hash[:data].map{|hash| hash[:attributes] }
     end
 
     def create 
         request = Request.create(request_params)
-        request.save
-        render json: request, status: 200
+        if request.save
+            render json: request, status: 200
+        else
+            render json: request.errors, status: 400
+        end
     end 
 
     def destroy
