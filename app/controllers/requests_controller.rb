@@ -3,7 +3,7 @@ class RequestsController < ApplicationController
     
     def index
         @requests = Request.all
-        render json: @requests
+        render json: RequestSerializer.new(@requests).serializable_hash[:data].map{|hash| hash[:attributes] }
     end
 
     def create 
