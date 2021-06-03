@@ -9,7 +9,7 @@ class RequestsController < ApplicationController
     def create 
         request = Request.create(request_params)
         if request.save
-            render json: request, status: 200
+            render json: RequestSerializer.new(request).serializable_hash[:data][:attributes], status: 200
         else
             render json: request.errors, status: 400
         end
