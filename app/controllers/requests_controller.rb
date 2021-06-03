@@ -8,7 +8,6 @@ class RequestsController < ApplicationController
 
     def create 
         request = Request.create(request_params)
-        request.user_id = 1
         request.save
         render json: request, status: 200
     end 
