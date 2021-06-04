@@ -12,8 +12,11 @@ class LobbiesController < ApplicationController
 
     def create 
         lobby = Lobby.new(lobby_params)
-        lobby.save
-        render json: LobbySerializer.new(lobby).serializable_hash[:data][:attributes]
+        if lobby.save
+            render json: LobbySerializer.new(lobby).serializable_hash[:data][:attributes]
+        else 
+            render json: lobby.errors, status: 400
+        end
     end 
 
     def destroy
