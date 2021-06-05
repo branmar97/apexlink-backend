@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
-  resources :lobbies, only: [:index, :show, :create, :destroy]
-  resources :requests, only: [:index, :create, :destroy]
+  resources :lobbies, only: [:index, :show, :create, :destroy] do
+    resources :requests, only: [:index]
+  end
+  resources :requests, only: [:create, :destroy]
 end
