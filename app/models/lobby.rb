@@ -1,7 +1,6 @@
 class Lobby < ApplicationRecord
   belongs_to :user
   has_many :requests, dependent: :destroy
-  has_many :users, through: :requests
 
   validates :user, presence: true
   validates :region, presence: true

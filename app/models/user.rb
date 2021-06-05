@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :requests, dependent: :destroy
-  has_many :lobbies, through: :requests
+  has_many :lobbies, dependent: :destroy
   
 
   include Devise::JWT::RevocationStrategies::JTIMatcher
