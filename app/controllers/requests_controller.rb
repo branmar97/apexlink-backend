@@ -2,7 +2,8 @@ class RequestsController < ApplicationController
     before_action :set_request, only: [:destroy]
     
     def index
-        @requests = Request.all.select {|request| request.lobby.id == params[:lobby_id].to_i}
+        @lobby = Lobby.find(params[:lobby_id])
+        @requests = @lobby.requests
         render json: RequestSerializer.new(@requests).serializable_hash[:data].map{|hash| hash[:attributes] }
     end
 
