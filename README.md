@@ -6,6 +6,17 @@ Apex Link is a web application where gamers can find friends and teammates for t
 
 Signup or login to create, view and join sessions.
 
+## Installation
+
+NOTE: Using Ruby versions other than Ruby 2.6.6 could cause compatibility issues
+
+Use `rvm install 'ruby-2.6.6'` then `rvm use 2.6.6`
+
+1. Run `bundle install`
+2. Run `rails db:create`
+3. Run `rails db:migrate`
+4. Finally, run `rails s` on port 3001
+
 ## Built Using
 
 * Ruby on Rails
