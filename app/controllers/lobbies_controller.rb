@@ -20,11 +20,8 @@ class LobbiesController < ApplicationController
     end 
 
     def update 
-        if @lobby.update 
-            render json: LobbySerializer.new(@lobby).serializable_hash[:date][:attributes]
-        else 
-            render json: @lobby.errors, status: 400
-        end
+        @lobby.update_attribute(:live, false)
+        render json: LobbySerializer.new(@lobby).serializable_hash[:data][:attributes]
     end
 
     def destroy
@@ -38,6 +35,6 @@ class LobbiesController < ApplicationController
     end 
 
     def lobby_params
-        params.require(:lobby).permit(:region, :platform, :gamemode, :description, :mic_required, :skill_level, :user_id, :live)
+        params.require(:lobby).permit(:region, :platform, :gamemode, :description, :mic_required, :skill_level, :user_id)
     end 
 end
