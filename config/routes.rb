@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
-  resources :lobbies, only: [:index, :show, :create, :destroy] do
+  resources :lobbies, only: [:index, :show, :create, :update, :destroy] do
     resources :requests, only: [:index]
   end
   resources :requests, only: [:create, :destroy]
