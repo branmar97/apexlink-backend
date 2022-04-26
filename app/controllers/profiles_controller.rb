@@ -10,4 +10,8 @@ class ProfilesController < ApplicationController
     def set_profile 
         @profile = Profile.find_by(slug: params[:id])
     end
+
+    def profile_params 
+        params.require(:profile).permit(:bio, :link)
+    end 
 end
