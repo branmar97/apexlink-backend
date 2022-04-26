@@ -7,6 +7,10 @@ class Profile < ApplicationRecord
   validates :link, length: { maximum: 200,
   message: "Link must be no more than %{count} characters" }
 
+  def to_param
+    self.slug
+  end
+
   private
 
   def set_slug
