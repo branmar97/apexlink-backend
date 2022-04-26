@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_20_150331) do
+ActiveRecord::Schema.define(version: 2022_04_26_185810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,16 @@ ActiveRecord::Schema.define(version: 2022_04_20_150331) do
     t.string "skill_level"
     t.boolean "live", default: true
     t.index ["user_id"], name: "index_lobbies_on_user_id"
+  end
+
+  create_table "profiles", force: :cascade do |t|
+    t.text "bio"
+    t.string "link"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
   create_table "requests", force: :cascade do |t|
@@ -58,6 +68,7 @@ ActiveRecord::Schema.define(version: 2022_04_20_150331) do
   end
 
   add_foreign_key "lobbies", "users"
+  add_foreign_key "profiles", "users"
   add_foreign_key "requests", "lobbies"
   add_foreign_key "requests", "users"
 end
