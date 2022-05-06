@@ -1,5 +1,6 @@
 class Profile < ApplicationRecord
   belongs_to :user
+  has_one_attached :avatar
   after_validation :set_slug
 
   validates :bio, length: { maximum: 150,
