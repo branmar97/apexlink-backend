@@ -4,6 +4,8 @@ class User < ApplicationRecord
   has_one :profile, dependent: :destroy
   after_create :init_profile
 
+  validates :gamertag, uniqueness: true
+
   include Devise::JWT::RevocationStrategies::JTIMatcher
 
   devise :database_authenticatable, :registerable,
