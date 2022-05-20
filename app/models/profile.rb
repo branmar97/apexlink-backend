@@ -19,6 +19,6 @@ class Profile < ApplicationRecord
   private
 
   def set_slug
-    self.slug = self.user.gamertag.to_s.parameterize + "-#{self.user.id}"
+    self.slug = self.user.gamertag.to_s.parameterize
   end 
 end
