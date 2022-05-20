@@ -1,7 +1,7 @@
 class ProfilesController < ApplicationController
     before_action :set_profile, only: [:show, :update]
 
-    def show 
+    def show
         render json: ProfileSerializer.new(@profile).serializable_hash[:data][:attributes]
     end
 
